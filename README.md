@@ -1,157 +1,102 @@
-# 🚀 MetaMCP (MCP Aggregator, Orchestrator, Middleware, Gateway in one docker) <!-- omit in toc -->
-
-<div align="center">
+# 🚀 MetaMCP
 
 <div align="center">
   <a href="https://discord.gg/mNsyat7mFX" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/Discord-MetaMCP-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/Discord-MetaMCP-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord">
   </a>
   <a href="https://docs.metamcp.com" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/Documentation-docs.metamcp.com-blue?style=flat-square&logo=book" alt="Documentation" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/Documentation-docs.metamcp.com-blue?style=flat-square&logo=book" alt="Documentation">
   </a>
   <a href="https://opensource.org/licenses/MIT" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT License" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="MIT License">
   </a>
   <a href="https://github.com/metatool-ai/metamcp/pkgs/container/metamcp" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/GHCR-available-green.svg?style=flat-square&logo=github" alt="GHCR" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/GHCR-available-green.svg?style=flat-square&logo=github" alt="GHCR">
   </a>
-  <a href="https://deepwiki.com/metatool-ai/metamcp"><img src="https://img.shields.io/badge/DeepWiki-metatool--ai%2Fmetamcp-blue.svg?style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAyCAYAAAAnWDnqAAAAAXNSR0IArs4c6QAAA05JREFUaEPtmUtyEzEQhtWTQyQLHNak2AB7ZnyXZMEjXMGeK/AIi+QuHrMnbChYY7MIh8g01fJoopFb0uhhEqqcbWTp06/uv1saEDv4O3n3dV60RfP947Mm9/SQc0ICFQgzfc4CYZoTPAswgSJCCUJUnAAoRHOAUOcATwbmVLWdGoH//PB8mnKqScAhsD0kYP3j/Yt5LPQe2KvcXmGvRHcDnpxfL2zOYJ1mFwrryWTz0advv1Ut4CJgf5uhDuDj5eUcAUoahrdY/56ebRWeraTjMt/00Sh3UDtjgHtQNHwcRGOC98BJEAEymycmYcWwOprTgcB6VZ5JK5TAJ+fXGLBm3FDAmn6oPPjR4rKCAoJCal2eAiQp2x0vxTPB3ALO2CRkwmDy5WohzBDwSEFKRwPbknEggCPB/imwrycgxX2NzoMCHhPkDwqYMr9tRcP5qNrMZHkVnOjRMWwLCcr8ohBVb1OMjxLwGCvjTikrsBOiA6fNyCrm8V1rP93iVPpwaE+gO0SsWmPiXB+jikdf6SizrT5qKasx5j8ABbHpFTx+vFXp9EnYQmLx02h1QTTrl6eDqxLnGjporxl3NL3agEvXdT0WmEost648sQOYAeJS9Q7bfUVoMGnjo4AZdUMQku50McDcMWcBPvr0SzbTAFDfvJqwLzgxwATnCgnp4wDl6Aa+Ax283gghmj+vj7feE2KBBRMW3FzOpLOADl0Isb5587h/U4gGvkt5v60Z1VLG8BhYjbzRwyQZemwAd6cCR5/XFWLYZRIMpX39AR0tjaGGiGzLVyhse5C9RKC6ai42ppWPKiBagOvaYk8lO7DajerabOZP46Lby5wKjw1HCRx7p9sVMOWGzb/vA1hwiWc6jm3MvQDTogQkiqIhJV0nBQBTU+3okKCFDy9WwferkHjtxib7t3xIUQtHxnIwtx4mpg26/HfwVNVDb4oI9RHmx5WGelRVlrtiw43zboCLaxv46AZeB3IlTkwouebTr1y2NjSpHz68WNFjHvupy3q8TFn3Hos2IAk4Ju5dCo8B3wP7VPr/FGaKiG+T+v+TQqIrOqMTL1VdWV1DdmcbO8KXBz6esmYWYKPwDL5b5FA1a0hwapHiom0r/cKaoqr+27/XcrS5UwSMbQAAAABJRU5ErkJggg==" alt="DeepWiki: MetaMCP"></a>
 </div>
 
+<div align="center">
+
+**Aggregate, organize, secure, and expose multiple MCP servers through one deployable gateway.**
+
+[Documentation](https://docs.metamcp.com) · [Quick demo](https://youtu.be/Cf6jVd2saAs) · [Discord](https://discord.gg/mNsyat7mFX) · [GitHub Issues](https://github.com/metatool-ai/metamcp/issues)
+
+English · [中文](./README_cn.md)
+
 </div>
 
-> **📢 Update:** *[From the author: apologize for some recent maintainence delay, but will at least keep merging PRs, more background [here](recent-updates.md)]*
+> **Project status:** Development may move slowly, but MetaMCP remains maintained. The current focus is on reviewing and merging community contributions. See [Recent updates](recent-updates.md) for more context.
 
-**MetaMCP** is a MCP proxy that lets you dynamically aggregate MCP servers into a unified MCP server, and apply middlewares. MetaMCP itself is a MCP server so it can be easily plugged into **ANY** MCP clients.
+MetaMCP is both an **MCP proxy** and an **MCP server**. It combines upstream MCP servers into unified, namespaced endpoints; lets you select and customize the tools each endpoint exposes; and applies middleware before requests reach clients.
 
-![MetaMCP Diagram](metamcp.svg)
+MetaMCP endpoints can be consumed by any compatible MCP client through **Streamable HTTP**, **SSE**, or **OpenAPI**.
 
----
+![MetaMCP architecture diagram](metamcp.svg)
 
-For more details, consider visiting our documentation site: https://docs.metamcp.com
+## Table of contents
 
-English | [中文](./README_cn.md)
-## 📋 Table of Contents <!-- omit in toc -->
+- [Why MetaMCP](#why-metamcp)
+- [How MetaMCP is organized](#how-metamcp-is-organized)
+- [Quick start](#quick-start)
+- [Connect an MCP client](#connect-an-mcp-client)
+- [Configure upstream MCP servers](#configure-upstream-mcp-servers)
+- [Shape and inspect your tool surface](#shape-and-inspect-your-tool-surface)
+- [Authentication and access control](#authentication-and-access-control)
+- [Traffic management](#traffic-management)
+- [Deployment and operations](#deployment-and-operations)
+- [Development](#development)
+- [Protocol compatibility and architecture](#protocol-compatibility-and-architecture)
+- [Roadmap](#roadmap)
+- [Community and project information](#community-and-project-information)
 
-- [🎯 Use Cases](#-use-cases)
-- [📖 Concepts](#-concepts)
-  - [🖥️ **MCP Server**](#️-mcp-server)
-    - [🔐 **Environment Variables \& Secrets (STDIO MCP Servers)**](#-environment-variables--secrets-stdio-mcp-servers)
-  - [🏷️ **MetaMCP Namespace**](#️-metamcp-namespace)
-  - [🌐 **MetaMCP Endpoint**](#-metamcp-endpoint)
-  - [⚙️ **Middleware**](#️-middleware)
-  - [🔍 **Inspector**](#-inspector)
-  - [✏️ **Tool Overrides \& Annotations**](#️-tool-overrides--annotations)
-- [🚀 Quick Start](#-quick-start)
-  - [🐳 Run with Docker Compose (Recommended)](#-run-with-docker-compose-recommended)
-  - [📦 Build development environment with Dev Containers (VSCode/Cursor)](#-build-development-environment-with-dev-containers-vscodecursor)
-  - [💻 Local Development](#-local-development)
-- [🔌 MCP Protocol Compatibility](#-mcp-protocol-compatibility)
-- [🔗 Connect to MetaMCP](#-connect-to-metamcp)
-  - [📝 E.g., Cursor via mcp.json](#-eg-cursor-via-mcpjson)
-  - [🖥️ Connecting Claude Desktop and Other STDIO-only Clients](#️-connecting-claude-desktop-and-other-stdio-only-clients)
-  - [🔧 API Key Auth Troubleshooting](#-api-key-auth-troubleshooting)
-- [❄️ Cold Start Problem and Custom Dockerfile](#️-cold-start-problem-and-custom-dockerfile)
-- [🧾 Log Levels](#-log-levels)
-- [🔐 Authentication](#-authentication)
-- [🚦 Traffic Management](#-traffic-management)
-  - [🚧 **MCP Rate Limit**](#-mcp-rate-limit)
-- [🔗 OpenID Connect (OIDC) Provider Support](#-openid-connect-oidc-provider-support)
-  - [🛠️ **Configuration**](#️-configuration)
-  - [🏢 **Supported Providers**](#-supported-providers)
-  - [🔒 **Security Features**](#-security-features)
-  - [📱 **Usage**](#-usage)
-- [⚙️ Registration Controls](#️-registration-controls)
-  - [🎛️ **Available Controls**](#️-available-controls)
-  - [🏢 **Enterprise Use Cases**](#-enterprise-use-cases)
-  - [🛠️ **Configuration**](#️-configuration-1)
-- [🌐 Custom Deployment and SSE conf for Nginx](#-custom-deployment-and-sse-conf-for-nginx)
-- [🏗️ Architecture](#️-architecture)
-  - [📊 Sequence Diagram](#-sequence-diagram)
-- [🗺️ Roadmap](#️-roadmap)
-- [🌐 i18n](#-i18n)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [🙏 Credits](#-credits)
+## Why MetaMCP
 
-## 🎯 Use Cases
-- 🏷️ **Group MCP servers into namespaces, host them as meta-MCPs, and assign public endpoints** (SSE or Streamable HTTP), with auth. One-click to switch a namespace for an endpoint.
--  🎯 **Pick tools you only need when remixing MCP servers.** Apply other **pluggable middleware** around observability, security, etc. (coming soon)
--  🔍 **Use as enhanced MCP inspector** with saved server configs, and inspect your MetaMCP endpoints in house to see if it works or not.
--  🔍 **Use as Elasticsearch for MCP tool selection** (coming soon)
+Use MetaMCP when you need a stable layer between MCP clients and a changing set of upstream MCP servers.
 
-Generally developers can use MetaMCP as **infrastructure** to host dynamically composed MCP servers through a unified endpoint, and build agents on top of it.
+- **Compose servers into focused endpoints.** Group one or more MCP servers into namespaces, then expose each namespace through a client-facing endpoint.
+- **Reduce tool overload.** Enable only the tools a client or agent needs instead of sending every available tool into the model context.
+- **Customize tool metadata.** Override tool names, titles, descriptions, and annotations for each namespace without changing the upstream server.
+- **Support multiple client types.** Expose the same namespace through Streamable HTTP, SSE, and OpenAPI.
+- **Centralize access control.** Use API keys, MCP OAuth, OIDC-based SSO, public/private ownership scopes, and registration controls.
+- **Inspect and troubleshoot centrally.** Save MCP server configurations, inspect tools and resources, and review live behavior from one interface.
+- **Apply infrastructure controls.** Add middleware, rate limits, session prewarming, and deployment-specific dependencies at the gateway layer.
 
-Quick demo video: https://youtu.be/Cf6jVd2saAs
+Developers can use MetaMCP as infrastructure for dynamically composed MCP servers and build agents on top of a consistent endpoint surface.
 
-![MetaMCP Screenshot](metamcp_screenshot.png)
+![MetaMCP dashboard](metamcp_screenshot.png)
 
-## 📖 Concepts
+## How MetaMCP is organized
 
-### 🖥️ **MCP Server**
-A MCP server configuration that tells MetaMCP how to start a MCP server.
+MetaMCP uses three primary building blocks:
 
-```json
-"HackerNews": {
-  "type": "STDIO",
-  "command": "uvx",
-  "args": ["mcp-hn"]
-}
+| Building block | Purpose |
+| --- | --- |
+| **MCP Server** | Stores the connection configuration for an upstream MCP server, including its transport, command, arguments, headers, or environment variables. |
+| **Namespace** | Groups one or more MCP servers, controls which tools are enabled, applies middleware, and stores namespace-specific tool overrides. |
+| **Endpoint** | Exposes a namespace to clients through Streamable HTTP, SSE, or OpenAPI, with optional API-key or OAuth authentication. |
+
+Two supporting features make those building blocks easier to operate:
+
+- **Middleware** intercepts and transforms MCP requests or responses at the namespace level.
+- **Inspector** provides saved configurations for testing upstream servers and MetaMCP endpoints without rebuilding connection details each time.
+
+A typical flow is:
+
+```text
+MCP servers → Namespace → Endpoint → MCP client
 ```
 
-#### 🔐 **Environment Variables & Secrets (STDIO MCP Servers)**
+You can change which namespace an endpoint uses without asking clients to adopt a new endpoint URL.
 
-For **STDIO MCP servers**, MetaMCP supports three ways to handle environment variables and secrets:
+## Quick start
 
-**1. Raw Values** - Direct string values (not recommended for secrets):
-```
-API_KEY=your-actual-api-key-here
-DEBUG=true
-```
+### Prerequisites
 
-**2. Environment Variable References** - Use `${ENV_VAR_NAME}` syntax:
-```
-API_KEY=${OPENAI_API_KEY}
-DATABASE_URL=${DB_CONNECTION_STRING}
-```
+- Docker
+- Docker Compose
+- Git
 
-**3. Auto-matching** - If the expected environment variable name in your tool matches the container's environment variable, you can omit it entirely. MetaMCP will automatically pass through matching environment variables.
-
-> **🔒 Security Note**: Environment variable references (`${VAR_NAME}`) are resolved from the MetaMCP container's environment at runtime. This keeps actual secret values out of your configuration and git repository.
-
-> **⚙️ Development Note**: For local development with `pnpm run dev:docker`, ensure your environment variables are listed in `turbo.json` under `globalEnv` to be passed to the development processes. This is not required for production Docker deployments.
-
-### 🏷️ **MetaMCP Namespace**
-- Group one or more MCP servers into a namespace
-- Enable/disable MCP servers or at tool level
-- Apply middlewares to MCP requests and responses
-- Override tool names/titles/descriptions per namespace and attach custom MCP annotations (e.g. `{ "annotations": { "readOnlyHint": false } }`)
-
-### 🌐 **MetaMCP Endpoint**
-- Create endpoints and assign namespace to endpoints
-- Multiple MCP servers in the namespace will be aggregated and emitted as a MetaMCP endpoint
-- Choose between API-Key Auth (in header or query param) or standard OAuth in MCP Spec 2025-06-18
-- Host through **SSE** or **Streamable HTTP** transports in MCP and **OpenAPI** endpoints for clients like [Open WebUI](https://github.com/open-webui/open-webui)
-
-### ⚙️ **Middleware**
-- Intercepts and transforms MCP requests and responses at namespace level
-- **Built-in example**: "Filter inactive tools" - optimizes tool context for LLMs
-- **Future ideas**: tool logging, error traces, validation, scanning
-
-### 🔍 **Inspector**
-Similar to the official MCP inspector, but with **saved server configs** - MetaMCP automatically creates configurations so you can debug MetaMCP endpoints immediately.
-
-### ✏️ **Tool Overrides & Annotations**
-- Open a namespace → **Tools** tab to see every tool coming from connected MCP servers.
-- Each saved tool can be expanded and edited inline: update the display **name/title/description** or provide a JSON blob with namespace-specific annotations (for example `{ "annotations": { "readOnlyHint": false } }`).
-- Badges in the table ("Overridden", "Annotations") show which tools currently have custom metadata. Hover them to read a tooltip describing what was overridden.
-- Annotation overrides are merged with whatever the upstream MCP server returns, so you can safely add custom UI hints without losing provider metadata.
-
-## 🚀 Quick Start
-
-### **🐳 Run with Docker Compose (Recommended)**
-
-Clone repo, prepare `.env`, and start with docker compose:
+### 1. Start MetaMCP
 
 ```bash
 git clone https://github.com/metatool-ai/metamcp.git
@@ -160,82 +105,63 @@ cp example.env .env
 docker compose up -d
 ```
 
-If you modify APP_URL env vars, make sure you only access from the APP_URL, because MetaMCP enforces CORS policy on the URL, so no other URL is accessible.
+Open [http://localhost:12008](http://localhost:12008), then create an account or sign in with the bootstrapped credentials configured in `.env`.
 
-Note that the pg volume name may collide with your other pg dockers, which is global, consider rename it in `docker-compose.yml`:
+> **Production setup:** Change `POSTGRES_PASSWORD`, `BETTER_AUTH_SECRET`, and any bootstrapped passwords before deployment. Use HTTPS for publicly accessible instances.
 
-```
-volumes:
-  metamcp_postgres_data:
-    driver: local
-```
+### 2. Create your first endpoint
 
-### **📦 Build development environment with Dev Containers (VSCode/Cursor)**
+Use the web interface to complete this sequence:
 
-You can use the VSCode/Cursor extension to build the development environment in a container.
+1. **Add an MCP server** and confirm that MetaMCP can connect to it.
+2. **Create a namespace** and add the server.
+3. **Review the namespace tools** and disable anything the endpoint should not expose.
+4. **Create an endpoint** and assign the namespace.
+5. **Generate an API key** if endpoint authentication is enabled.
+6. **Connect a client** using one of the endpoint URLs shown below.
 
-It only requires that you have an environment running Docker or a similar alternative (the `docker`/`docker compose` command is required), and no other dependent components need to be installed on your host machine.
+The complete walkthrough is available in the [Quick Start documentation](https://docs.metamcp.com/en/quickstart).
 
-1. First, clone the MetaMCP source code, open project in Visual Studio Code.
-```bash
-git clone https://github.com/metatool-ai/metamcp.git
-cd metamcp
-code .
-```
-2. Switch to Dev Containers. Open the VSCode Command Palette, and execute `Dev Containers: Reopen in Container`.
+### Important setup notes
 
-VSCode will open the Dev Containers project in a new window, where it will build the runtime and install the toolchain according to the `Dockerfile` before starting the connection and finally installing the MetaMCP dependencies.
-<img width="895" height="153" alt="image" src="https://github.com/user-attachments/assets/d3e1420d-43c1-4ed6-9229-b91ea09c142a" />
+- MetaMCP enforces CORS against `APP_URL`. If you change `APP_URL`, access the application from that exact origin or configure trusted origins appropriately.
+- The default PostgreSQL volume is named `postgres_data`. Rename it in `docker-compose.yml` if it conflicts with another Compose project on the same host.
 
-> **note**
-> This process requires a reliable network connection, and it will access Docker Hub, GitHub, and some other sites. You will need to ensure the network connection yourself, otherwise the container build may fail.
+## Connect an MCP client
 
-Wait some minutes, depending on the internet connection or computer performance, it may take from a few minutes to tens of minutes, you can click on the Progress Bar in the bottom right corner to view a live log where you will be able to check unusual stuck.
-<img width="732" height="173" alt="image" src="https://github.com/user-attachments/assets/6e5752f8-7353-4a8f-b489-c13daef6700e" />
+Each endpoint exposes the following URL formats:
 
-After finished, you can run `pnpm dev` to start the development server.
+| Transport | URL | Best fit |
+| --- | --- | --- |
+| **Streamable HTTP** | `/metamcp/<ENDPOINT_NAME>/mcp` | Recommended for modern MCP clients |
+| **SSE** | `/metamcp/<ENDPOINT_NAME>/sse` | Compatibility with clients that still use SSE |
+| **OpenAPI** | `/metamcp/<ENDPOINT_NAME>/api` | REST/OpenAPI clients such as Open WebUI |
+| **OpenAPI schema** | `/metamcp/<ENDPOINT_NAME>/api/openapi.json` | Client generation and schema inspection |
 
-### **💻 Local Development**
+Replace `<ENDPOINT_NAME>` with the endpoint name created in MetaMCP. API keys use the format `sk_mt_...`.
 
-Still recommend running postgres through docker for easy setup:
+### Cursor and other remote-capable clients
 
-```bash
-pnpm install
-pnpm dev
-```
-
-## 🔌 MCP Protocol Compatibility
-
-- ✅ **Tools, Resources, and Prompts** supported
-- ✅ **OAuth-enabled MCP servers** tested for 03-26 version
-
-If you have questions, feel free to leave **GitHub issues** or **PRs**.
-
-## 🔗 Connect to MetaMCP
-
-### 📝 E.g., Cursor via mcp.json
-
-Example `mcp.json`
+Streamable HTTP is recommended:
 
 ```json
 {
   "mcpServers": {
     "MetaMCP": {
-      "url": "http://localhost:12008/metamcp/<YOUR_ENDPOINT_NAME>/sse"
+      "url": "http://localhost:12008/metamcp/<ENDPOINT_NAME>/mcp",
+      "headers": {
+        "Authorization": "Bearer <YOUR_API_KEY>"
+      }
     }
   }
 }
 ```
 
-### 🖥️ Connecting Claude Desktop and Other STDIO-only Clients
+Remove the `headers` block when authentication is disabled for the endpoint.
 
-Since MetaMCP endpoints are remote only (SSE, Streamable HTTP, OpenAPI), clients that only support stdio servers (like Claude Desktop) need a local proxy to connect.
+### Claude Desktop and other STDIO-only clients
 
-**Note:** While `mcp-remote` is sometimes suggested for this purpose, it's designed for OAuth-based authentication and doesn't work with MetaMCP's API key authentication. Based on testing, `mcp-proxy` is the recommended solution.
-
-Here's a working configuration for Claude Desktop using `mcp-proxy`:
-
-Using Streamable HTTP
+MetaMCP endpoints are remote-only. A client that supports only STDIO needs a local bridge. Although `mcp-remote` is sometimes suggested for this purpose, it is designed for OAuth-based authentication and does not work with MetaMCP's API-key authentication; based on testing, `mcp-proxy` is the recommended option.
 
 ```json
 {
@@ -246,256 +172,372 @@ Using Streamable HTTP
         "mcp-proxy",
         "--transport",
         "streamablehttp",
-        "http://localhost:12008/metamcp/<YOUR_ENDPOINT_NAME>/mcp"
+        "http://localhost:12008/metamcp/<ENDPOINT_NAME>/mcp"
       ],
       "env": {
-        "API_ACCESS_TOKEN": "<YOUR_API_KEY_HERE>"
+        "API_ACCESS_TOKEN": "<YOUR_API_KEY>"
       }
     }
   }
 }
 ```
 
-Using SSE
+An SSE bridge is also supported:
 
 ```json
 {
   "mcpServers": {
-    "ehn": {
+    "MetaMCP": {
       "command": "uvx",
       "args": [
         "mcp-proxy",
-        "http://localhost:12008/metamcp/<YOUR_ENDPOINT_NAME>/sse"
+        "http://localhost:12008/metamcp/<ENDPOINT_NAME>/sse"
       ],
       "env": {
-        "API_ACCESS_TOKEN": "<YOUR_API_KEY_HERE>"
+        "API_ACCESS_TOKEN": "<YOUR_API_KEY>"
       }
     }
   }
 }
 ```
 
-**Important notes:**
-- Replace `<YOUR_ENDPOINT_NAME>` with your actual endpoint name
-- Replace `<YOUR_API_KEY_HERE>` with your MetaMCP API key (format: `sk_mt_...`)
+For more context and alternative approaches, see [issue #76](https://github.com/metatool-ai/metamcp/issues/76#issuecomment-3046707532).
 
-For more details and alternative approaches, see [issue #76](https://github.com/metatool-ai/metamcp/issues/76#issuecomment-3046707532).
+### API-key troubleshooting
 
-### 🔧 API Key Auth Troubleshooting
+- Prefer the `Authorization: Bearer <API_KEY>` header.
+- Query-parameter authentication with `?api_key=` works with Streamable HTTP and OpenAPI, but not SSE.
+- To isolate authentication problems, temporarily test the endpoint with authentication disabled, then re-enable it after the connection succeeds.
 
-- `?api_key=` param api key auth doesn't work for SSE. It only works for Streamable HTTP and OpenAPI.
-- Best practice is to use the API key in `Authorization: Bearer <API_KEY>` header.
-- Try disable auth temporarily when you face connection issues to see if it is an auth issue.
+## Configure upstream MCP servers
 
-## ❄️ Cold Start Problem and Custom Dockerfile
+An MCP server record tells MetaMCP how to connect to an upstream server. For example, a STDIO configuration may use:
 
-- MetaMCP pre-allocate idle sessions for each configured MCP servers and MetaMCPs. The default idle session for each is 1 and that can help reduce cold start time.
-- If your MCP requires dependencies other than `uvx` or `npx`, you need to customize the Dockerfile to install dependencies on your own.
-- Check [invalidation.md](invalidation.md) for a seq diagram about how idle session invalidates during updates.
+```json
+{
+  "HackerNews": {
+    "type": "STDIO",
+    "command": "uvx",
+    "args": ["mcp-hn"]
+  }
+}
+```
 
-🛠️ **Solution**: Customize the Dockerfile to add dependencies or pre-install packages to reduce cold start time.
+### Environment variables and secrets for STDIO servers
 
-## 🧾 Log Levels
+MetaMCP supports three patterns.
 
-MetaMCP’s backend writes logs to files and optionally mirrors selected levels to the console. Control console mirroring with the `LOG_LEVEL` environment variable.
+#### 1. Raw values
 
-- Files
-  - `app.log`: receives `DEBUG`, `INFO`, and `WARN`
-  - `error.log`: receives `ERROR`
+Use direct values for non-sensitive configuration:
 
-- Console mirroring (`LOG_LEVEL`)
-  - `all`: mirror `DEBUG`, `INFO`, `WARN`, `ERROR` to console
-  - `info`: mirror only `INFO` to console
-  - `errors-only`: mirror `WARN` and `ERROR` to console
-  - `none`: no console output
+```text
+DEBUG=true
+```
 
-- Defaults and examples
-  - Default (when unset or invalid): `errors-only`
-  - `.env` example:
-    ```bash
-    LOG_LEVEL='errors-only' # 'all', 'info', 'errors-only', 'none'
-    ```
-  - `docker-compose.dev.yml` uses: `LOG_LEVEL: ${LOG_LEVEL:-all}`
+Avoid storing secrets this way when possible.
 
-## 🔐 Authentication
+#### 2. Environment-variable references
 
-- 🛡️ **Better Auth** for frontend & backend (TRPC procedures)
-- 🍪 **Session cookies** enforce secure internal MCP proxy connections
-- 🔑 **API key authentication** for external access via `Authorization: Bearer <api-key>` header
-- 🪪 **MCP OAuth**: Exposed endpoints have options to use standard OAuth in MCP Spec 2025-06-18, easy to connect.
-- 🏢 **Multi-tenancy**: Designed for organizations to deploy on their own machines. Supports both private and public access scopes. Users can create MCPs, namespaces, endpoints, and API keys for themselves or for everyone. Public API keys cannot access private MetaMCPs.
-- ⚙️ **Separate Registration Controls**: Administrators can independently control UI registration and SSO/OAuth registration through the settings page, allowing for flexible enterprise deployment scenarios.
+Reference variables from the MetaMCP container with `${ENV_VAR_NAME}` syntax:
 
-## 🚦 Traffic Management
+```text
+API_KEY=${OPENAI_API_KEY}
+DATABASE_URL=${DB_CONNECTION_STRING}
+```
 
-### 🚧 MCP Rate Limit
-The MCP Rate Limit feature allows you to set the maximum requests a MCP tool (a endpoint) will accept in a given time window. There are two different strategies to set limits that you can use separately or together:
+The reference is resolved at runtime, keeping the secret itself out of the saved server configuration and repository.
 
- * `Endpoint rate-limiting (Rate Limiting)`: applies simultaneously to all clients using the endpoint, sharing a unique counter.
- * `User rate-limiting (Client Rate Limiting)`: sets a counter to each individual user.
+#### 3. Automatic matching
 
-Both types can coexist and they complement each other, and store the counters in-memory. On a cluster, each machine sees and counts only its passing traffic.
+When an upstream server expects an environment variable that already exists under the same name in the MetaMCP container, you can omit it from the server configuration. MetaMCP passes matching variables through automatically.
 
-### **Endpoint rate-limiting**
-The endpoint rate limit acts on the number of simultaneous transactions an endpoint can process. This type of limit protects the service for all customers.
-When the users connected to an endpoint together exceed the `rate-limiting`, MetaMCP starts to reject connections with a status code `503 Service Unavailable`.
+> **Local development:** When using `pnpm run dev:docker`, add required variables to `globalEnv` in `turbo.json` so Turbo passes them to development processes. Production Docker deployments do not require this step.
 
-#### **Endpoint rate-limiting options**
- * `Max Rate`: Defines how many requests will you accept from all users together at any given instant. When the gateway starts, the bucket is full. As requests from users come, the remaining tokens in the bucket decrease. At the same time, the rate-limiting refills the bucket at the desired rate until its maximum capacity is reached.
- * `Max Rate Seconds`: Time period in which the maximum rates operate in seconds. For instance, if you set an max rate seconds of 60s and a rate-limiting of 5, you are allowing 5 requests every sixty seconds.
+## Shape and inspect your tool surface
 
-### **User rate-limiting**
-The client or user rate limit applies one counter to each individual user and endpoint. When a single user connected to an endpoint exceeds their `client-max-rate`, MetaMCP starts rejecting connections with a status code `429 Too Many Requests`
+### Namespaces
 
-#### **User rate-limiting options**
- * `Client Max Rate`: Number of tokens you add to the Token Bucket for each individual user (user quota) in the time interval you want (Client Max Rate Seconds). The remaining tokens in the bucket are the requests a specific user can do.
- * `Client Max Rate Seconds`: Time period in which the maximum rates operate in seconds. For instance, if you set an every of 60s and a rate of 5, you are allowing 5 requests every sixty seconds.
- * `Client Max Rate Strategy`: Sets the strategy you will use to set client counters. Choose ip when the restrictions apply to the client’s IP address, or set it to header when there is a header that identifies a user uniquely. That header must be defined with the key entry.
- * `Client Max Rate Strategy Key`: It is the header name containing the user identification (e.g., Authorization on tokens, or X-Original-Forwarded-For for IPs).
+A namespace can:
 
-## 🔗 OpenID Connect (OIDC) Provider Support
+- combine one or more MCP servers;
+- enable or disable an entire server;
+- enable or disable individual tools;
+- apply middleware to MCP requests and responses; and
+- store tool metadata overrides that apply only within that namespace.
 
-MetaMCP supports **OpenID Connect authentication** for enterprise SSO integration. This allows organizations to use their existing identity providers (Auth0, Keycloak, Azure AD, etc.) for authentication.
+### Tool overrides and annotations
 
-### 🛠️ **Configuration**
+Open a namespace and select the **Tools** tab to edit saved tool metadata inline. You can override:
 
-Add the following environment variables to your `.env` file:
+- tool name;
+- display title;
+- description; and
+- MCP annotations, such as `{ "annotations": { "readOnlyHint": false } }`.
+
+Annotation overrides are merged with metadata returned by the upstream server, so namespace-specific hints do not remove unrelated provider metadata. The interface marks tools with active overrides or annotations.
+
+### Middleware
+
+Middleware runs at the namespace level and can intercept or transform MCP requests and responses. The built-in **Filter inactive tools** middleware keeps disabled tools out of the client-visible tool list and reduces unnecessary model context.
+
+Additional middleware areas may include logging, error tracing, validation, and security scanning.
+
+### Inspector
+
+The built-in inspector is similar to the official MCP Inspector, but it retains server configurations. MetaMCP can therefore generate ready-to-use inspection settings for both upstream servers and exposed endpoints.
+
+## Authentication and access control
+
+MetaMCP supports several complementary security layers:
+
+- **Better Auth** for the frontend and backend;
+- **session cookies** for secure internal proxy connections;
+- **API keys** for external endpoint access;
+- **MCP OAuth** for endpoints using the OAuth flow defined in the MCP specification;
+- **OIDC-based SSO** for organizational identity providers;
+- **public and private ownership scopes** for MCP servers, namespaces, endpoints, and API keys; and
+- **separate registration controls** for form-based and SSO-based account creation.
+
+Public API keys cannot access private MetaMCP resources.
+
+### OpenID Connect configuration
+
+Add the following variables to `.env` to enable OIDC:
 
 ```bash
-# Required
 OIDC_CLIENT_ID=your-oidc-client-id
 OIDC_CLIENT_SECRET=your-oidc-client-secret
 OIDC_DISCOVERY_URL=https://your-provider.com/.well-known/openid-configuration
+# Currently required due to a known better-auth issue (better-auth#3278)
+OIDC_AUTHORIZATION_URL=https://your-provider.com/auth/authorize
 
-# Optional customization
+# Optional
 OIDC_PROVIDER_ID=oidc
 OIDC_SCOPES=openid email profile
 OIDC_PKCE=true
 ```
 
-### 🏢 **Supported Providers**
+The callback URL is:
 
-MetaMCP has been tested with popular OIDC providers:
+```text
+${APP_URL}/api/auth/oauth2/callback/oidc
+```
 
-- **Auth0**: `https://your-domain.auth0.com/.well-known/openid-configuration`
-- **Keycloak**: `https://your-keycloak.com/realms/your-realm/.well-known/openid-configuration`
-- **Azure AD**: `https://login.microsoftonline.com/your-tenant-id/v2.0/.well-known/openid-configuration`
-- **Google**: `https://accounts.google.com/.well-known/openid-configuration`
-- **Okta**: `https://your-domain.okta.com/.well-known/openid-configuration`
+MetaMCP uses the authorization-code flow, enables PKCE by default, and creates users automatically on first successful sign-in. It has been used with providers such as Auth0, Keycloak, Azure AD, Google, and Okta.
 
-### 🔒 **Security Features**
+See [CONTRIBUTING.md](CONTRIBUTING.md#openid-connect-oidc-provider-setup) for provider setup and troubleshooting details.
 
-- 🔐 **PKCE (Proof Key for Code Exchange)** enabled by default
-- 🛡️ **Authorization Code Flow** with automatic user creation
-- 🔄 **Auto-discovery** of OIDC endpoints
-- 🍪 **Seamless session management** with existing auth system
+### Registration controls
 
-### 📱 **Usage**
+Administrators can control the two signup paths independently from **Settings → Authentication Settings**:
 
-Once configured, users will see a **"Sign in with OIDC"** button on the login page alongside the email/password form. The authentication flow automatically creates new users on first login.
+| Control | Effect |
+| --- | --- |
+| **Disable UI Registration** | Blocks new accounts created through the registration form. |
+| **Disable SSO Registration** | Blocks new accounts created through OAuth or OIDC providers. |
 
-For more detailed configuration examples and troubleshooting, see **[CONTRIBUTING.md](CONTRIBUTING.md#openid-connect-oidc-provider-setup)**.
+This supports common enterprise policies, including SSO-only access, manually provisioned accounts, or a complete registration freeze.
 
-## ⚙️ Registration Controls
+## Traffic management
 
-MetaMCP provides **separate controls** for different registration methods, allowing administrators to fine-tune user access policies for enterprise deployments.
+MetaMCP provides token-bucket rate limits at two levels:
 
-### 🎛️ **Available Controls**
+| Limit | Counter scope | Response when exceeded |
+| --- | --- | --- |
+| **Endpoint rate limit** | Shared by all clients using an endpoint | `503 Service Unavailable` |
+| **Client rate limit** | Separate counter for each client and endpoint | `429 Too Many Requests` |
 
-- **UI Registration**: Controls whether users can create accounts via the registration form
-- **SSO Registration**: Controls whether users can create accounts via SSO/OAuth providers (OIDC, etc.)
+Both limits can be enabled together.
 
-### 🏢 **Enterprise Use Cases**
+### Endpoint rate-limit settings
 
-This separation enables common enterprise scenarios:
+- **Max Rate:** Total request tokens available to all clients sharing the endpoint.
+- **Max Rate Seconds:** Refill interval for the shared token bucket. For example, a max rate of `5` over `60` seconds permits five requests per minute across all clients.
 
-- **Block UI registration, allow SSO**: Prevent manual signups while allowing corporate SSO users
-- **Block SSO registration, allow UI**: Allow manual signups while restricting SSO access
-- **Block both**: Completely disable new user registration
-- **Allow both**: Default behavior for open deployments
+### Client rate-limit settings
 
-### 🛠️ **Configuration**
+- **Client Max Rate:** Request tokens available to each individual client.
+- **Client Max Rate Seconds:** Refill interval for each client-specific token bucket.
+- **Client Max Rate Strategy:** Identifies clients by IP address or by a selected request header.
+- **Client Max Rate Strategy Key:** Header name used when the header strategy is selected, such as `Authorization` or `X-Original-Forwarded-For`.
 
-Access the **Settings** page in the MetaMCP admin interface to configure these controls:
+Rate-limit counters are stored in memory. In a multi-node deployment, each node counts only the traffic that reaches that node.
 
-1. Navigate to **Settings** → **Authentication Settings**
-2. Toggle **"Disable UI Registration"** to control form-based signups
-3. Toggle **"Disable SSO Registration"** to control OAuth/OIDC signups
+## Deployment and operations
 
-Both controls work independently, giving you full flexibility over your registration policy.
+### Production checklist
 
-## 🌐 Custom Deployment and SSE conf for Nginx
+- Use an instance with at least **2–4 GB of memory**; larger deployments may benefit from additional capacity.
+- Change the default database, authentication, and bootstrapped-user secrets.
+- Serve public deployments over HTTPS.
+- Set `APP_URL` and `NEXT_PUBLIC_APP_URL` to the public application origin.
+- Configure `EXTRA_TRUSTED_ORIGINS` when additional trusted origins are required.
+- Review registration controls after creating the intended administrator and team accounts.
 
-If you want to deploy it to a online service or a VPS, a instance of at least 2GB-4GB of memory is required. And the larger size, the better performance.
+### Reverse proxy and SSE
 
-Since MCP leverages SSE for long connection, if you are using reverse proxy like nginx, please refer to an example setup [nginx.conf.example](nginx.conf.example)
+SSE uses long-lived connections. When deploying behind Nginx, start from [nginx.conf.example](nginx.conf.example) and preserve settings needed for streaming connections.
 
-## 🏗️ Architecture
+### Cold starts and custom dependencies
 
-- **Frontend**: Next.js
-- **Backend**: Express.js with tRPC, hosting MCPs through TS SDK and internal proxy
-- **Auth**: Better Auth
-- **Structure**: Standalone monorepo with Turborepo and Docker publishing
+MetaMCP preallocates idle sessions for configured MCP servers and MetaMCP compositions. The default idle-session count is one, which helps reduce cold-start latency.
 
-### 📊 Sequence Diagram
+When an upstream MCP server requires dependencies beyond the packages already available in the image, customize the Dockerfile to install those dependencies. Preinstalling commonly used packages can also reduce startup time.
 
-*Note: Prompts and resources follow similar patterns to tools.*
+See [invalidation.md](invalidation.md) for the session-invalidation sequence used during configuration updates.
+
+### Log levels
+
+The backend writes logs to files and can mirror selected levels to the console.
+
+| Destination | Included levels |
+| --- | --- |
+| `app.log` | `DEBUG`, `INFO`, `WARN` |
+| `error.log` | `ERROR` |
+
+Set `LOG_LEVEL` to control console output:
+
+| Value | Console output |
+| --- | --- |
+| `all` | `DEBUG`, `INFO`, `WARN`, `ERROR` |
+| `info` | `INFO` only |
+| `errors-only` | `WARN` and `ERROR` |
+| `none` | No console output |
+
+The default is `errors-only` when the variable is unset or invalid.
+
+```bash
+LOG_LEVEL='errors-only' # 'all', 'info', 'errors-only', 'none'
+```
+
+`docker-compose.dev.yml` defaults to `all` for development.
+
+## Development
+
+### Dev Containers with VS Code or Cursor
+
+A Dev Container provides the full toolchain without requiring local project dependencies beyond Docker and an editor with Dev Containers support.
+
+```bash
+git clone https://github.com/metatool-ai/metamcp.git
+cd metamcp
+code .
+```
+
+In the editor command palette, run **Dev Containers: Reopen in Container**. After the container finishes building and dependencies are installed, start the development server:
+
+```bash
+pnpm dev
+```
+
+The first build downloads images and packages, so a reliable connection to Docker Hub and GitHub is required.
+
+### Docker development with hot reload
+
+```bash
+cp example.env .env
+pnpm run dev:docker
+```
+
+Related commands:
+
+```bash
+pnpm run dev:docker:down   # Stop the development environment
+pnpm run dev:docker:clean  # Stop it and remove volumes
+```
+
+### Local development
+
+Local development requires Node.js 18 or later, pnpm, and an accessible PostgreSQL instance. Running PostgreSQL through Docker remains the easiest setup.
+
+```bash
+cp example.env .env
+pnpm install
+pnpm dev
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contribution workflow.
+
+## Protocol compatibility and architecture
+
+### MCP compatibility
+
+- Tools, resources, and prompts are supported.
+- Upstream OAuth-enabled MCP servers have been tested against the 2025-03-26 protocol revision.
+- Exposed endpoints can use the standard MCP OAuth flow from the 2025-06-18 specification.
+- Remote endpoints are available through Streamable HTTP and SSE.
+- OpenAPI endpoints support clients such as [Open WebUI](https://github.com/open-webui/open-webui).
+- STDIO-only clients can connect through a local proxy.
+
+Questions and compatibility reports are welcome through [GitHub Issues](https://github.com/metatool-ai/metamcp/issues).
+
+### Application architecture
+
+- **Frontend:** Next.js
+- **Backend:** Express.js and tRPC, using the MCP TypeScript SDK and an internal proxy
+- **Authentication:** Better Auth
+- **Repository:** Standalone Turborepo monorepo
+- **Deployment:** Docker images published through GitHub Container Registry
+
+### Request flow
+
+Prompts and resources follow the same general flow as tools.
 
 ```mermaid
 sequenceDiagram
-    participant MCPClient as MCP Client (e.g., Claude Desktop)
+    participant MCPClient as MCP Client
     participant MetaMCP as MetaMCP Server
-    participant MCPServers as Installed MCP Servers
+    participant MCPServers as Upstream MCP Servers
 
-    MCPClient ->> MetaMCP: Request list tools
+    MCPClient ->> MetaMCP: Request tool list
 
-    loop For each listed MCP Server
+    loop For each configured MCP server
         MetaMCP ->> MCPServers: Request list_tools
-        MCPServers ->> MetaMCP: Return list of tools
+        MCPServers ->> MetaMCP: Return tools
     end
 
-    MetaMCP ->> MetaMCP: Aggregate tool lists & apply middleware
-    MetaMCP ->> MCPClient: Return aggregated list of tools
+    MetaMCP ->> MetaMCP: Aggregate tools and apply middleware
+    MetaMCP ->> MCPClient: Return unified tool list
 
-    MCPClient ->> MetaMCP: Call tool
-    MetaMCP ->> MCPServers: call_tool to target MCP Server
+    MCPClient ->> MetaMCP: Call a tool
+    MetaMCP ->> MCPServers: Forward call to the owning server
     MCPServers ->> MetaMCP: Return tool response
     MetaMCP ->> MCPClient: Return tool response
 ```
 
-## 🗺️ Roadmap
+## Roadmap
 
-**Potential next steps:**
+Potential next steps include:
 
-- [ ] 🔌 Headless Admin API access
-- [ ] 🔍 Dynamically apply search rules on MetaMCP endpoints
-- [ ] 🛠️ More middlewares
-- [ ] 💬 Chat/Agent Playground
-- [ ] 🧪 Testing & Evaluation for MCP tool selection optimization
-- [ ] ⚡ Dynamically generate MCP servers
+- [ ] Headless administration API
+- [ ] Dynamic search rules for MetaMCP endpoints
+- [ ] Additional middleware
+- [ ] Chat and agent playground
+- [ ] Testing and evaluation for MCP tool-selection optimization
+- [ ] Dynamic MCP server generation
 
-## 🌐 i18n
+## Community and project information
 
-See [README-i18n.md](README-i18n.md)
+### Internationalization
 
-Currently en and zh locale are supported, but welcome contributions.
+English and Chinese are currently supported. Contributions for additional locales are welcome. See [README-i18n.md](README-i18n.md).
 
-## 🤝 Contributing
+### Contributing
 
-We welcome contributions! See details at **[CONTRIBUTING.md](CONTRIBUTING.md)**
+Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
-## 📄 License
+### License
 
-**MIT**
+MetaMCP is released under the [MIT License](LICENSE).
 
-Would appreciate if you mentioned with back links if your projects use the code.
+A backlink or acknowledgment is appreciated when another project uses this code.
 
-## 🙏 Credits
+### Credits
 
-Some code inspired by:
+Parts of the project were inspired by:
+
 - [MCP Inspector](https://github.com/modelcontextprotocol/inspector)
 - [MCP Proxy Server](https://github.com/adamwattis/mcp-proxy-server)
-
-Not directly used the code by took ideas from
-- https://github.com/open-webui/openapi-servers
-- https://github.com/open-webui/mcpo
+- [Open WebUI OpenAPI Servers](https://github.com/open-webui/openapi-servers)
+- [mcpo](https://github.com/open-webui/mcpo)
