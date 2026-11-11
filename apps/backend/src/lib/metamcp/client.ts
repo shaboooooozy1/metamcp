@@ -99,10 +99,15 @@ export const createMetaMcpClient = (
 
     const hasHeaders = Object.keys(headers).length > 0;
 
+    // SDK 1.32 follows redirects only within the same origin unless this is
+    // set. User MCP URLs often redirect across host or port.
     if (!hasHeaders) {
-      transport = new SSEClientTransport(new URL(transformedUrl));
+      transport = new SSEClientTransport(new URL(transformedUrl), {
+        redirectPolicy: "follow",
+      });
     } else {
       transport = new SSEClientTransport(new URL(transformedUrl), {
+        redirectPolicy: "follow",
         requestInit: {
           headers,
         },
@@ -130,9 +135,12 @@ export const createMetaMcpClient = (
     const hasHeaders = Object.keys(headers).length > 0;
 
     if (!hasHeaders) {
-      transport = new StreamableHTTPClientTransport(new URL(transformedUrl));
+      transport = new StreamableHTTPClientTransport(new URL(transformedUrl), {
+        redirectPolicy: "follow",
+      });
     } else {
       transport = new StreamableHTTPClientTransport(new URL(transformedUrl), {
+        redirectPolicy: "follow",
         requestInit: {
           headers,
         },

@@ -320,6 +320,8 @@ const createTransport = async (req: express.Request): Promise<Transport> => {
     );
 
     const transport = new SSEClientTransport(new URL(url), {
+      // Follow cross-origin redirects (load balancers, vanity domains).
+      redirectPolicy: "follow",
       eventSourceInit: {
         fetch: (url, init) => fetch(url, { ...init, headers }),
       },
@@ -353,6 +355,7 @@ const createTransport = async (req: express.Request): Promise<Transport> => {
     };
 
     const transport = new StreamableHTTPClientTransport(new URL(url), {
+      redirectPolicy: "follow",
       requestInit: {
         headers,
       },

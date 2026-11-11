@@ -406,6 +406,8 @@ export function useConnection({
             );
           }
           transportOptions = {
+            // Browser fetches fail on any redirect unless this is set (SDK 1.32).
+            redirectPolicy: "follow",
             eventSourceInit: {
               fetch: (
                 url: string | URL | globalThis.Request,
@@ -434,6 +436,7 @@ export function useConnection({
               mcpProxyServerUrl.searchParams.append("env", JSON.stringify(env));
               transportOptions = {
                 authProvider: authProvider,
+                redirectPolicy: "follow",
                 eventSourceInit: {
                   fetch: (
                     url: string | URL | globalThis.Request,
@@ -463,6 +466,7 @@ export function useConnection({
               mcpProxyServerUrl = new URL(`/mcp-proxy/server/sse`, getAppUrl());
               mcpProxyServerUrl.searchParams.append("url", url);
               transportOptions = {
+                redirectPolicy: "follow",
                 eventSourceInit: {
                   fetch: (
                     url: string | URL | globalThis.Request,
@@ -493,6 +497,7 @@ export function useConnection({
               mcpProxyServerUrl.searchParams.append("url", url);
               transportOptions = {
                 authProvider: authProvider,
+                redirectPolicy: "follow",
                 eventSourceInit: {
                   fetch: (
                     url: string | URL | globalThis.Request,

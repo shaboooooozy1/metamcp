@@ -48,9 +48,19 @@ COPY . .
 # Build all packages and apps
 RUN pnpm build
 
-RUN sed -i -e "s/30000/600000/" \
-    "node_modules/.pnpm/next@15.5.12_react-dom@19.1.2_react@19.1.2__react@19.1.2/node_modules/next/dist/server/lib/router-utils/proxy-request.js" \
-    "node_modules/.pnpm/next@15.5.12_react-dom@19.1.2_react@19.1.2__react@19.1.2/node_modules/next/dist/esm/server/lib/router-utils/proxy-request.js"
+# pnpm's virtual store directory name embeds the resolved Next version and
+# peer deps, so a hardcoded next@x.y.z path breaks on every bump. Patch every
+# installed copy and fail the build if the timeout file is no longer there.
+RUN set -eu; \
+    files="$(find node_modules/.pnpm -type f \( \
+      -path '*/next/dist/server/lib/router-utils/proxy-request.js' -o \
+      -path '*/next/dist/esm/server/lib/router-utils/proxy-request.js' \
+    \))"; \
+    if [ -z "$files" ]; then \
+      echo "next proxy-request.js not found under node_modules/.pnpm" >&2; \
+      exit 1; \
+    fi; \
+    printf '%s\n' "$files" | xargs sed -i -e "s/30000/600000/"
 
 # Production runner stage
 FROM base AS runner
